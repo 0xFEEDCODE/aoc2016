@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="day1.fs"/>
+        <Compile Include="day2.fs"/>
+        <Compile Include="day3.fs"/>
+        <Compile Include="day9.fs"/>
+        <Content Include="day3.txt">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="day9.txt">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="day10.txt">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Compile Include="day10.fs"/>
+        <Compile Include="Program.fs"/>
+    </ItemGroup>
+</Project>

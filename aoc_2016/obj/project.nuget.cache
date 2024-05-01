@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "6TRIR2MDAyKcqzenCkoUs7j+/9p53Uk2lPWBZxShUCM0UKfZev8QQmN0Hgq0cF718ohQpPlZ2xKISgmfgx9JlA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\smsm\\RiderProjects\\aoc_2016\\aoc_2016\\aoc_2016.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\smsm\\.nuget\\packages\\fsharp.core\\8.0.102\\fsharp.core.8.0.102.nupkg.sha512"
+  ],
+  "logs": []
+}
