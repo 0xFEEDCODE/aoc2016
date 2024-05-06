@@ -1,5 +1,6 @@
 module aoc_2016.day9
 
+open System
 open System.Diagnostics
 open System.IO
 
@@ -88,5 +89,5 @@ let solve () =
     let res2 = inp |> Seq.map processInp2 |> Seq.sum
     t.Stop()
     printfn "%A" (res2, t.ElapsedTicks)
-
+    
     0

@@ -4,7 +4,6 @@ open System.Collections.Generic
 open System.IO
 open System.Text.RegularExpressions
 
-
 type Chips = int option * int option
 type Bot = int * Chips
 
@@ -32,7 +31,7 @@ let solve () =
 
     let regex = Regex("[0-9]+")
 
-    let mutable map = Map.empty<int, Chips>
+    let mutable bots = Map.empty<int, Chips>
 
     let botConfData =
         inp
@@ -46,7 +45,8 @@ let solve () =
 
             (seq[0], seq[1]))
 
-    let instructions =
+    let instructionsQueue =
+        Queue(
         inp
         |> Seq.filter (fun el -> el.Contains "gives")
         |> Seq.map (fun el ->
@@ -61,53 +61,39 @@ let solve () =
             let low = if lowToBot then seq[1] else seq[1] + 10000
             let high = if highToBot then seq[2] else seq[2] + 10000
 
-            (seq[0], low, high))
+            (seq[0], low, high)))
 
     for chip, botN in botConfData do
-        if (map |> Map.containsKey botN) then
-            map <- (map |> Map.add botN (addChip map[botN] (Some(chip))))
+        if (bots |> Map.containsKey botN) then
+            bots <- (bots |> Map.add botN (addChip bots[botN] (Some(chip))))
         else
-            map <- (map |> Map.add botN (Some(chip), None))
-
-    let q = Queue()
-
-    for botN, low, high in instructions do
-        q.Enqueue(botN, low, high)
-
-    while q.Count > 0 do
-        let botN, low, high = q.Dequeue()
-
-        if not (map |> Map.containsKey botN) then
-            q.Enqueue(botN, low, high)
+            bots <- (bots |> Map.add botN (Some(chip), None))
+            
+    let chipLowTarget = 17
+    let chipHighTarget = 61
+            
+    while instructionsQueue.Count > 0 do
+        let botN, low, high = instructionsQueue.Dequeue()
+        
+        if not (bots |> Map.containsKey botN) then
+            instructionsQueue.Enqueue((botN, low, high))
         else
-            let chipLow, chipHigh = map[botN]
-
+            let chipLow, chipHigh = bots[botN]
+                
             if chipLow = None || chipHigh = None then
-                q.Enqueue(botN, low, high)
+                instructionsQueue.Enqueue((botN, low, high))
             else
-                let l = 17
-                let r = 61
-
-                if chipLow = Some(l) && chipHigh = Some(r) then
+                if chipLow = Some(chipLowTarget) && chipHigh = Some(chipHighTarget) then
                     printfn $"%A{botN} YAP"
-
-                if chipLow = Some(r) && chipHigh = Some(l) then
-                    printfn $"%A{botN} YAP"
-
-                if not (map |> Map.containsKey low) then
-                    map <- (map |> Map.add low (None, None))
-
-                if not (map |> Map.containsKey high) then
-                    map <- (map |> Map.add high (None, None))
-
-                map <- (map |> Map.add low (addChip map[low] chipLow))
-                map <- (map |> Map.add high (addChip map[high] chipHigh))
-                map <- (map |> Map.add botN (None, None))
-
-
-    let outputs = map |> Seq.filter (fun el -> el.Key >= 10000)
+                    
+                bots <- bots
+                        |> Map.add low (addChip (if bots |> Map.containsKey low then bots[low] else (None, None)) chipLow)
+                        |> Map.add high (addChip (if bots |> Map.containsKey high then bots[high] else (None, None)) chipHigh)
+                        |> Map.add botN (None, None)
+                
+                    
+    let outputs = bots |> Seq.filter (fun el -> el.Key >= 10000)
     printfn "%A" outputs
-
 
 
 //printfn "%A" map
