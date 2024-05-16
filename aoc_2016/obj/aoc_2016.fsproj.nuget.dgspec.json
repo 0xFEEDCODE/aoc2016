@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\synca\\source\\repos\\aoc2016\\aoc_2016\\aoc_2016.fsproj": {}
+    "C:\\Users\\smsm\\RiderProjects\\aoc2016\\aoc_2016\\aoc_2016.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\synca\\source\\repos\\aoc2016\\aoc_2016\\aoc_2016.fsproj": {
+    "C:\\Users\\smsm\\RiderProjects\\aoc2016\\aoc_2016\\aoc_2016.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\synca\\source\\repos\\aoc2016\\aoc_2016\\aoc_2016.fsproj",
+        "projectUniqueName": "C:\\Users\\smsm\\RiderProjects\\aoc2016\\aoc_2016\\aoc_2016.fsproj",
         "projectName": "aoc_2016",
-        "projectPath": "C:\\Users\\synca\\source\\repos\\aoc2016\\aoc_2016\\aoc_2016.fsproj",
-        "packagesPath": "C:\\Users\\synca\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\synca\\source\\repos\\aoc2016\\aoc_2016\\obj\\",
+        "projectPath": "C:\\Users\\smsm\\RiderProjects\\aoc2016\\aoc_2016\\aoc_2016.fsproj",
+        "packagesPath": "C:\\Users\\smsm\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\smsm\\RiderProjects\\aoc2016\\aoc_2016\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\synca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\smsm\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\8.0.100\\FSharp\\library-packs": {},
+          "C:\\Program Files\\dotnet\\sdk\\8.0.104\\FSharp\\library-packs": {},
+          "\\\\demant.com\\data\\KBN\\RnD\\SWS\\Build\\Arizona\\DevTools.AutoBuild\\MpHalSupportedUtlServiceContractsImporter": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,7 +40,7 @@
             "FSharp.Core": {
               "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
               "target": "Package",
-              "version": "[8.0.100, )",
+              "version": "[8.0.102, )",
               "generatePathProperty": true
             }
           },
@@ -59,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.104/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
