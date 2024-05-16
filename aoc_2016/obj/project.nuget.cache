@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "nMgMpICKBRucoD5iT5y9nA18opiLL/PQuI6UgBO6fZEh20J+e5+mGUlWLiGluD5BpTNOsvUCzMLlTxK0h5OOKw==",
+  "dgSpecHash": "FDWy3LiJcCRVFlqJnu0w3n590d5vKNqi7EMQsMMWyWDZKZ5BSxe0pKqdBe0eSewPxtFY6qXIlNWB86lO6JiMFg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\smsm\\RiderProjects\\aoc2016\\aoc_2016\\aoc_2016.fsproj",
+  "projectFilePath": "Z:\\repos\\aoc2016\\aoc_2016\\aoc_2016.fsproj",
   "expectedPackageFiles": [
-    "C:\\Users\\smsm\\.nuget\\packages\\fsharp.core\\8.0.102\\fsharp.core.8.0.102.nupkg.sha512"
+    "C:\\Users\\synca\\.nuget\\packages\\fsharp.core\\8.0.200\\fsharp.core.8.0.200.nupkg.sha512"
   ],
   "logs": []
 }

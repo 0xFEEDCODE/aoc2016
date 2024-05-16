@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "FSharp.Core/8.0.102": {
+      "FSharp.Core/8.0.200": {
         "type": "package",
         "compile": {
           "lib/netstandard2.1/FSharp.Core.dll": {
@@ -59,15 +59,15 @@
     }
   },
   "libraries": {
-    "FSharp.Core/8.0.102": {
-      "sha512": "LwrE/DaS/1vAykKNSPzNBuUw2wFMI0KZsjUJQUCfqXnH8MonDxDliTpeA8qpcAvvV2OT1op2oCi9SrVoithWFA==",
+    "FSharp.Core/8.0.200": {
+      "sha512": "U016Y0NhtIEQvbmxf6Sff9lx7PTSGEFctA/kLrJr9MvNfKwjrzlK/4C2V1StgsapegWeGYW6K8Zd/D6vc9C4Yw==",
       "type": "package",
-      "path": "fsharp.core/8.0.102",
+      "path": "fsharp.core/8.0.200",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "fsharp.core.8.0.102.nupkg.sha512",
+        "fsharp.core.8.0.200.nupkg.sha512",
         "fsharp.core.nuspec",
         "lib/netstandard2.0/FSharp.Core.dll",
         "lib/netstandard2.0/FSharp.Core.xml",
@@ -104,32 +104,29 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "FSharp.Core >= 8.0.102"
+      "FSharp.Core >= 8.0.200"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\smsm\\.nuget\\packages\\": {}
+    "C:\\Users\\synca\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\smsm\\RiderProjects\\aoc2016\\aoc_2016\\aoc_2016.fsproj",
+      "projectUniqueName": "Z:\\repos\\aoc2016\\aoc_2016\\aoc_2016.fsproj",
       "projectName": "aoc_2016",
-      "projectPath": "C:\\Users\\smsm\\RiderProjects\\aoc2016\\aoc_2016\\aoc_2016.fsproj",
-      "packagesPath": "C:\\Users\\smsm\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\smsm\\RiderProjects\\aoc2016\\aoc_2016\\obj\\",
+      "projectPath": "Z:\\repos\\aoc2016\\aoc_2016\\aoc_2016.fsproj",
+      "packagesPath": "C:\\Users\\synca\\.nuget\\packages\\",
+      "outputPath": "Z:\\repos\\aoc2016\\aoc_2016\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\smsm\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\synca\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\8.0.104\\FSharp\\library-packs": {},
-        "\\\\demant.com\\data\\KBN\\RnD\\SWS\\Build\\Arizona\\DevTools.AutoBuild\\MpHalSupportedUtlServiceContractsImporter": {},
+        "C:\\Users\\synca\\.dotnet\\sdk\\8.0.203\\FSharp\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -146,7 +143,7 @@
           "FSharp.Core": {
             "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
             "target": "Package",
-            "version": "[8.0.102, )",
+            "version": "[8.0.200, )",
             "generatePathProperty": true
           }
         },
@@ -166,7 +163,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.104/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\synca\\.dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
