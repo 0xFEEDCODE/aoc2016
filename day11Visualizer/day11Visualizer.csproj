@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="Z:\repos\aoc2016\aoc_2016\aoc_2016.fsproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="resources\spinner.png" />
+      <Resource Include="resources\spinner.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+    </ItemGroup>
+
+</Project>

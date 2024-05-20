@@ -319,3 +319,4 @@ let canBeMoved (target: Configuration) =
     | CG(c, g) -> canMoveCg c g target
     *)
 
+
