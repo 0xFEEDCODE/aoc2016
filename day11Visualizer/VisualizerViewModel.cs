@@ -160,7 +160,6 @@ public class VisualizerViewModel : INotifyPropertyChanged
                 });
                 
                 animationTimer.Interval = 1000;
-                animationTimer.Start();
             });
 
         }, _ => stateMachine.CurrentState is State.PreSolve && puzzleInput.Length > 0);

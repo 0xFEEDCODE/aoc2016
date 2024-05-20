@@ -16,7 +16,6 @@ type MoveConfiguration =
     | GG of Generator * Generator
     | CG of Chip * Generator
 
-[<CustomEquality; NoComparison>]
 type Configuration =
     { mutable chips: Chip array
       mutable generators: Generator array }
@@ -53,28 +52,11 @@ type Configuration =
 
     member this.hasGeneratorGotCorrespondingChip(gen: Generator) = this.chips |> Array.contains gen
 
-
     member this.GetCount() =
         this.chips.Length + this.generators.Length
 
-    override this.GetHashCode() : int =
-        let chipHash = this.chips |> Array.fold (fun acc chip -> acc + chip.GetHashCode()) 0
-
-        let generatorHash =
-            this.generators
-            |> Array.fold (fun acc generator -> acc + generator.GetHashCode()) 0
-
-        (chipHash * 397) ^^^ generatorHash
-
-
     member this.IsAnythingFried() =
-        not (Array.isEmpty this.generators)
-        && not (this.chips |> Array.forall (this.hasChipGotCorrespondingGenerator))
-    (*
-        let unhookedChips = this.chips |> Array.where(fun ch -> not (this.hasChipGotCorrespondingGenerator ch))
-        let unhookedGenerators = this.generators |> Array.where(fun gen -> not (this.hasGeneratorGotCorrespondingChip gen))
-        unhookedChips.Length > 0 && unhookedGenerators.Length > 0
-        *)
+        not (Array.isEmpty this.generators) && not (this.chips |> Array.forall this.hasChipGotCorrespondingGenerator)
 
     member this.AsStringFormatted() =
         let mutable sb = StringBuilder("Chips: ")
@@ -97,14 +79,6 @@ type Configuration =
         { chips = Array.copy this.chips
           generators = Array.copy this.generators }
 
-    override this.Equals(other: obj) =
-        match other with
-        | :? Configuration as otherConfig ->
-            let chipEquality = Array.forall2 (=) this.chips otherConfig.chips
-            let generatorEquality = Array.forall2 (=) this.generators otherConfig.generators
-            chipEquality && generatorEquality
-        | _ -> false
-
 let executeMove (source: Configuration) (target: Configuration) =
     function
     | C c -> source.moveChip c target
@@ -122,14 +96,6 @@ let executeMove (source: Configuration) (target: Configuration) =
 [<CustomEquality; NoComparison>]
 type Layout =
     | Layout of int * Configuration array
-
-    (*
-    override this.GetHashCode() : int =
-        let (Layout(floor, configurations)) = this
-
-        configurations
-        |> Array.fold (fun acc config -> (acc * 31) + config.GetHashCode()) (floor.GetHashCode())
-        *)
 
     member this.GetDeltasAsString() =
         let (Layout(floor, configurations)) = this

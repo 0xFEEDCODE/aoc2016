@@ -3,7 +3,6 @@
 open System.Collections.Generic
 open System.IO
 
-
 type Chip = string
 type Generator = string
 
