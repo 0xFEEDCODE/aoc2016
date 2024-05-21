@@ -1,0 +1,93 @@
+﻿<Window x:Class="day11Visualizer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:day11Visualizer"
+        mc:Ignorable="d"
+        Background="#333333"
+        d:DataContext="{d:DesignInstance local:VisualizerViewModel}"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <local:FalseMakesMeCollapsed x:Key="FalseMakesMeCollapsed" />
+        <local:TrueMakesMeCollapsed x:Key="TrueMakesMeCollapsed" />
+
+        <!-- Fade In Animation -->
+        <Storyboard x:Key="FadeInAnimation">
+            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                             From="0.0" To="1.0" Duration="0:0:1.0" />
+        </Storyboard>
+
+        <Style TargetType="Grid" x:Key="AnimatedGrid">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Visibility}" Value="Visible">
+                    <DataTrigger.EnterActions>
+                        <BeginStoryboard Storyboard="{StaticResource FadeInAnimation}" />
+                    </DataTrigger.EnterActions>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid x:Name="PreSolvePart" Visibility="{Binding Path=IsStatePreSolve, Converter={StaticResource FalseMakesMeCollapsed}}" Style="{StaticResource AnimatedGrid}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.8*" />
+                    <RowDefinition Height="0.2*" />
+                </Grid.RowDefinitions>
+
+                <TextBox Grid.Row="0" Text="{Binding PuzzleInput, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" Background="Transparent" Foreground="White"
+                         FontFamily="Fixedsys 2 Monospaced Regular, Consolas" TextWrapping="Wrap" AcceptsReturn="True" />
+                <Button Grid.Row="1" Content="Solve" Command="{Binding SolveCommand}" />
+            </Grid>
+        </Grid>
+
+        <Grid x:Name="SolvePart" Visibility="{Binding Path=IsStateSolve, Converter={StaticResource FalseMakesMeCollapsed}}" Style="{StaticResource AnimatedGrid}">
+            <ScrollViewer ScrollChanged="ScrollViewer_ScrollChanged" VerticalScrollBarVisibility="Hidden">
+                <TextBox x:Name="SolveProgressTextBox" Text="{Binding SolveProgress}" Background="Transparent" Foreground="White"
+                         FontFamily="Fixedsys 2 Monospaced Regular, Consolas" />
+            </ScrollViewer>
+            <Image
+                Source="/resources/spinner.png"
+                Width="300"
+                Height="300"
+                Opacity="0.40"
+                RenderTransformOrigin="0.5, 0.5">
+                <Image.RenderTransform>
+                    <RotateTransform x:Name="NoFreeze" />
+                </Image.RenderTransform>
+                <Image.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="(Image.RenderTransform).(RotateTransform.Angle)"
+                                    To="360" Duration="0:0:1" RepeatBehavior="Forever" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Image.Triggers>
+            </Image>
+        </Grid>
+
+        <Grid x:Name="VisualizerPart" Visibility="{Binding Path=IsStateVisualize, Converter={StaticResource FalseMakesMeCollapsed}}" Background="Transparent"
+              Style="{StaticResource AnimatedGrid}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.90*" />
+                <RowDefinition Height="0.10*" />
+            </Grid.RowDefinitions>
+            <Canvas Grid.Row="0" x:Name="Canvas" />
+            <Grid Grid.Row="1" Background="#444444">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.70*" />
+                    <ColumnDefinition Width="0.10*" />
+                    <ColumnDefinition Width="0.20*" />
+                </Grid.ColumnDefinitions>
+
+                <Slider Grid.Column="0" x:Name="Slider" VerticalAlignment="Center" IsSnapToTickEnabled="True"/>
+                <Label Grid.Column="1" Content="{Binding Step}" FontFamily="Fixedsys 2 Monospaced Regular, Consolas" Foreground="White" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Button Grid.Column="2" Padding="2" Content="Animate" Command="{Binding AnimateCommand}" />
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

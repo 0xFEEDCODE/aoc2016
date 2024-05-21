@@ -19,6 +19,7 @@
         </Content>
         <Compile Include="day10.fs"/>
         <Compile Include="day11.fs" />
+        <Compile Include="day11Visualizer.fs" />
         <Content Include="day11.txt">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
