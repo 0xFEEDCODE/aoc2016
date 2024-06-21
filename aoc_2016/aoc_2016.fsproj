@@ -18,11 +18,33 @@
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
         <Compile Include="day10.fs"/>
-        <Compile Include="day11.fs" />
-        <Compile Include="day11Visualizer.fs" />
+        <Compile Include="day11.fs"/>
+        <Compile Include="day11Visualizer.fs"/>
         <Content Include="day11.txt">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="day20.txt">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
+        <Content Include="day21.txt">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="day22.txt">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="day24.txt">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Compile Include="day17.fs"/>
+        <Compile Include="day18.fs" />
+        <Compile Include="day19.fs" />
+        <Compile Include="day20.fs" />
+        <Compile Include="experiment.fs" />
+        <Compile Include="day21.fs" />
+        <Compile Include="day22.fs" />
+        <Compile Include="day23.fs" />
+        <Compile Include="day24.fs" />
+        <Compile Include="day25.fs" />
         <Compile Include="Program.fs"/>
     </ItemGroup>
 </Project>

@@ -9,14 +9,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="Z:\repos\aoc2016\aoc_2016\aoc_2016.fsproj" />
-    </ItemGroup>
-
-    <ItemGroup>
       <None Remove="resources\spinner.png" />
       <Resource Include="resources\spinner.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Resource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\aoc_2016\aoc_2016.fsproj" />
     </ItemGroup>
 
 </Project>

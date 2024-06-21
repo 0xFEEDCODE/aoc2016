@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day11Visualizer", "day11Visualizer\day11Visualizer.csproj", "{3C640B0A-3108-445B-AA4E-B87945CB7CF9}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "aoc_2016", "Z:\repos\aoc2016\aoc_2016\aoc_2016.fsproj", "{9A4F7A1F-CA87-48D9-B58D-7F6738941C7C}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "aoc_2016", "aoc_2016\aoc_2016.fsproj", "{0ADF38B4-0A4C-4070-9ED6-9E331A29225A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +18,9 @@ Global
 		{9A4F7A1F-CA87-48D9-B58D-7F6738941C7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A4F7A1F-CA87-48D9-B58D-7F6738941C7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A4F7A1F-CA87-48D9-B58D-7F6738941C7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ADF38B4-0A4C-4070-9ED6-9E331A29225A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ADF38B4-0A4C-4070-9ED6-9E331A29225A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ADF38B4-0A4C-4070-9ED6-9E331A29225A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ADF38B4-0A4C-4070-9ED6-9E331A29225A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

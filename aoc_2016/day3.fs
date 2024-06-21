@@ -67,19 +67,7 @@ let solve () =
     printfn "%A" nTriangles1
     printfn "%A" nTriangles2
 
-    let fn a b = a + b
-    let add1 n = fn n 1
-    let add2 n = fn n 2
-
-    printfn "%A" (add1 5)
-    printfn "%A" (add2 5)
-    
-    let a = A 5
-    let b = B (5, 2)
-    let c = C "B"
-
-
-    ()
+    0
 
 
 //printfn "%A" (triangles2 |> Seq.length)
